@@ -1,0 +1,22 @@
+doctype html
+html(lang='en')
+  head
+    block title
+      title RATS
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='/css/main.css')
+    
+  body
+    block nav
+      include ./includes/topnav
+    block content
+    block footer
+      include ./includes/footer
+            
+    <!-- Scripts -->
+     script(type='text/javascript', src="/javascripts/jquery.min.js")
+     script(type='text/javascript', src="/javascripts/jquery.scrollex.min.js")
+     script(type='text/javascript', src="/javascripts/skel.min.js")
+     script(type='text/javascript', src="/javascripts/util.js")
+     script(type='text/javascript', src="/javascripts/main.js")
