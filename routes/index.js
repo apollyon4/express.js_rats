@@ -20,8 +20,8 @@ router.get('/', function(req, res, next) {
 router.get('/history', function(req, res) {
   res.render('history.pug');
 });
-router.get('/notice', function(req, res) {
-  res.render('notice.pug');
+router.get('/notices', function(req, res) {
+  res.render('notices/notices.pug');
 });
 router.get('/member', function(req, res) {
   res.render('member.pug');
