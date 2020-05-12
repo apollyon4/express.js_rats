@@ -61,6 +61,15 @@
     return data
   }
 })();
+(function() {
+  var today = new Date(),
+      year = today.getFullYear(),
+      $frag = $(document.createDocumentFragment());
+  for(var count = year; count >= 2000; count -= 1) {
+    $frag.append('<option value='+count+'>'+count+'</option>');
+  }
+  $('select[name=year]').append($frag);
+})();
 
 /* project */
 (function () {

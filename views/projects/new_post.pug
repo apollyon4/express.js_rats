@@ -7,15 +7,11 @@ block content
     form(method='post' action='/projects/new_post')
       .row.uniform
         .12u
+          input#title(type='text' name='title' value='' placeholder='제목')
+        .12u
           .select-wrapper
             select#category(name='year')
               option(value='') - 프로젝트년도 -
-              option(value='2019') 2019
-              option(value='2018') 2018
-              option(value='2017') 2017
-              option(value='2016') 2016
-        .12u
-          input#title(type='text' name='title' value='' placeholder='제목')
         .12u
           input#x(type='hidden' name='content')
           trix-editor.trix-content(input='x')
@@ -29,3 +25,4 @@ block content
 
 block added_script
   script(type='text/javascript', src="/javascripts/trix.js")
+  script(type='text/javascript', src="/javascripts/project.js")
