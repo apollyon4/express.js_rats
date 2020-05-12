@@ -65,7 +65,6 @@ var settings = {
 				on, off;
 
 			on = function() {
-
 				$t.css('background-position', 'center 100%, center 100%, center 0px');
 
 				$window
@@ -301,15 +300,32 @@ var settings = {
 
 				$window.on('resize', function() { $window.trigger('scroll'); });
 
-				$banner.scrollex({
-					bottom:		$header.outerHeight(),
-					terminate:	function() { $header.removeClass('alt'); },
-					enter:		function() { $header.addClass('alt'); },
-					leave:		function() { $header.removeClass('alt'); $header.addClass('reveal'); }
-				});
+				// not used(if use it, add 'alt' calss
+				// $banner.scrollex({
+				// 	bottom:		$header.outerHeight(),
+				// 	terminate:	function() { $header.removeClass('alt'); },
+				// 	enter:		function() { $header.addClass('alt'); },
+				// 	leave:		function() { $header.removeClass('alt'); $header.addClass('reveal'); }
+				// });
 
 			}
 
 	});
 
 })(jQuery);
+
+// apollyon edit.
+// login cookie seeions
+function pad(v) {
+	if(v < 10) {
+		v = '0'+v;
+	}
+	return v;
+}
+
+if($.cookie('name')==null) {
+	$('.links').append('<li><a href="/accounts/login">Login</a></li>');
+} else {
+	$('.links').append('<li><a href="/accounts/logout">Logout</a></li>');
+	$('.logo').after('<a href="/accounts/profile" class="icon fa-user"> '+$.cookie('name')+'</a>');
+}

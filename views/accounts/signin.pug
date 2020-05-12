@@ -1,0 +1,42 @@
+extends ../layout
+
+block content
+  #main.container
+    h2 회원가입
+    .row.uniform
+      .signin
+        form(method='post' action='/accounts/signin')
+          ul
+            li 아이디
+            .info(id='idinfo')
+            input.textbox(type='text' name='id' value='' placeholder='')
+            input.button.alt.icon.fa-check(type='button', id='duplicate', value='중복확인')
+            input(type='hidden' disabled='dissable' name='idDup' value='' placeholder='')
+            li.textbox 비밀번호 
+            li.textbox 비밀번호 확인
+            .info(id='pwinfo')
+            input.textbox(type='password' name='pw' value='' placeholder='')
+            input.textbox(type='password' name='confirm' value='' placeholder='')
+            li 이름
+            .info(id='nameinfo')
+            input.textbox(type='text' name='name' value='' placeholder='')
+            li 전화번호
+            .info(id='phoneinfo')
+            input.textbox(type='text' name='phone' value='' placeholder='')
+            li 이메일
+            .info(id='emailinfo')
+            input.textbox(type='email' name='email' value='' placeholder='')
+            li 생년월일
+            select(name='year').birth
+            .birthname 년
+            select(name='month').birth
+            .birthname 월
+            select(name='day').birth
+            .birthname 일
+            input(type='hidden' name='birth' value='' placeholder='')
+            li 학번
+            select(name='grade').textbox
+          input.alt(type='submit' value='가입')
+
+block added_script
+  script(type='text/javascript', src='/javascripts/signin.js')

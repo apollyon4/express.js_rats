@@ -1,0 +1,22 @@
+extends ../layout
+
+block content
+  section.wrapper.style2
+    .inner
+      .box
+        .content
+          .align-center
+            form.loginform(method='post' action='login')
+              p R A T S
+              .info=msg
+              .area
+                input(type="text" name="id" id="id" value="" placeholder="ID")
+              .area
+                input(type="password" name="pw" id="pw" value="" placeholder="PW")
+              .btn
+                input(type='submit' value='Login')
+                a.button.alt(href="signin") signin
+              hr
+            .find
+              a(herf="#") 아이디 찾기
+              a(herf="#") 비밀번호 찾기

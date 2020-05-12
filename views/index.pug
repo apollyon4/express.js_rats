@@ -44,8 +44,8 @@ block content
           h2 Notice
           .table
             .th
-              div 제목;
-              div 날짜;
+              div 제목
+              div 작성일
             .tr
               div
                 a(href='#') something...aaaaaaaaaaaaaaaaa
@@ -70,29 +70,13 @@ block content
           h2 Activity
           .table
             div
-              div 제목;
-              div 날짜;
-            div
-              div
-                a(href='#') something...aaaaaaaaaaaaaaaaa
-              div 2019-08-14
-            div
-              div
-                a(href='#') bbbbbbbbbbbbbbbbb
-              div 2019-08-13
-            div
-              div
-                a(href='#') scacacacaccaca
-              div 2019-08-13
-            div
-              div
-                a(href='#') qqqqqqqqqqqqqqqqqq
-              div 2019-08-13
-            div
-              div
-                a(href='#') dddddddddddddddddddd
-              div 2019-08-13
-            hr
+              div 제목
+              div 작성일
+            each item in data
+              .tr
+                div
+                  a(href='/projects/page/'+item.id)= item.title
+                div= item.date
             
     h2 Project
     .paper

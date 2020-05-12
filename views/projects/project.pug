@@ -1,0 +1,25 @@
+extends ../layout
+
+block content
+  link(rel='stylesheet' href='/css/trix.css')
+  #main.container
+    .flex-title
+      div
+        h2 Project
+      div
+        ul.actions
+          li
+            a.button.special(href='/projects') 목록
+  section.wrapper.style2
+    .inner
+      .box
+        .content
+          header.align-center
+            h2= data.title
+            .align-right= data.name
+            .date.align-right= data.date
+            hr
+            .innerContent= data.contents
+            
+block added_script
+  script(type='text/javascript', src='/javascripts/project.js')

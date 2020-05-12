@@ -1,0 +1,21 @@
+extends ../layout
+
+block content
+  #main.container
+    .flex-title
+      div
+        h2 Project
+      div
+        ul.actions
+          li
+            a.button.special(href='/projects/new_post') &#xCD94;&#xAC00;
+    hr
+    .yearlist
+      each year in data
+        .hr-sect= year.year
+        for item in year.arr
+          div
+            a(href='/projects/page/'+item.id)= item.title
+
+block added_script
+  script(type='text/javascript', src='/javascripts/signin.js')
